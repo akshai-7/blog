@@ -21,3 +21,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/categories', [CategoriesController::class, 'categories']);
 Route::post('/cratecategories', [CategoriesController::class, 'cratecategories']);
 Route::get('/categories', [CategoriesController::class, 'categorieslist']);
+Route::get('/remove/{id}', [CategoriesController::class, 'remove']);

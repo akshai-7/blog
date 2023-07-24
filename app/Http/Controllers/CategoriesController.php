@@ -22,7 +22,13 @@ class CategoriesController extends Controller
     public function categorieslist()
     {
         $categorieslist = Categories::get();
-        // dd($categorieslist);
         return view('/categories', ['categorieslist' => $categorieslist],);
+    }
+    public function remove($id)
+    {
+        $categories = Categories::find($id);
+        $categories->delete();
+        session()->flash('message1', 'Deleted');
+        return redirect('/categories');
     }
 }
