@@ -2,17 +2,16 @@
 
 @section('content')
     <div>
-
-        <form action="/cratecategories" method="Post">
+        <form action="/cratecategories" method="Post" style="margin-left:100px">
             @csrf
-            <h3>Add Categories</h3>
-            <label for="">Categories Name</label>
+            <h4 class="mt-3">Add Categories</h4>
+            <label for="" class="mt-3">Categories Name</label>
             <input type="text" name="categories">
             <button type="submit">Submit</button>
         </form>
     </div>
-    <div class="mt-5">
-        <h3> Categories detailes</h3>
+    <div class="mt-5" style="margin-left:100px">
+        <h4> Categories detailes</h4>
         <table class="table table-bordered mt-2" style="border: 1px solid lightgrey;width:1000px;margin-left:100px">
             <thead>
                 <th style="text-align:center;">Id</th>
