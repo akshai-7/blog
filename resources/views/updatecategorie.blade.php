@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="mt-5">
-        <h4 class="mt-3" style="margin-left:100px"> Update Categories detailes</h4>
+        <h4 class="mt-3" style="margin-left:100px"> Edit Categories detailes</h4>
         <form action="/update/{id}" method="Post">
             @csrf
             <table class="table table-bordered mt-5" style="border: 1px solid lightgrey;width:1000px;margin-left:100px">
