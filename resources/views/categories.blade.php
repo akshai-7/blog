@@ -19,16 +19,16 @@
                 <th style="text-align:center;">Categories</th>
                 <th style="text-align:center;">Action</th>
             </thead>
-            @foreach ($categorieslist as $categorieslist)
+            @foreach ($categorieslist as $list)
                 <tr>
-                    <td style="text-align:center;" class="table_data">{{ $categorieslist->id }}
+                    <td style="text-align:center;" class="table_data">{{ $list->id }}
                     </td>
-                    <td style="text-align:center;" class="table_data">{{ $categorieslist->name }}
+                    <td style="text-align:center;" class="table_data">{{ $list->name }}
                     </td>
                     <td style="text-align:center;" class="table_data">
-                        <a href="/updatecategorie/{{ $categorieslist->id }}" class="btn btn-success btn-sm mt-1"><i
+                        <a href="/updatecategorie/{{ $list->id }}" class="btn btn-success btn-sm mt-1"><i
                                 class="fa-solid fa-pen-to-square btn-btn-success"></i></a>
-                        <a href="/remove/{{ $categorieslist->id }}" class="btn btn-danger btn-sm mt-1"><i
+                        <a href="/remove/{{ $list->id }}" class="btn btn-danger btn-sm mt-1"><i
                                 class="fa-solid fa-trash "></i></a>
                     </td>
                 </tr>

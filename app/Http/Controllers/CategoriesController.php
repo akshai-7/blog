@@ -18,9 +18,10 @@ class CategoriesController extends Controller
         $categories->save();
         return redirect('/categories');
     }
+
     public function categorieslist()
     {
-        $categorieslist = Categories::all();
+        $categorieslist = Categories::get();
         return view('/categories', compact('categorieslist'));
     }
     public function updatecategorie($id)

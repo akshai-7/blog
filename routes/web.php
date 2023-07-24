@@ -4,6 +4,11 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\HomeController;
+use App\Http\Controllers\Auth\RegisterController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +23,11 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::view('/', 'login')->name('login');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/categories', [CategoriesController::class, 'categories']);
-Route::post('/cratecategories', [CategoriesController::class, 'cratecategories']);
+Route::view('/cratecategories', [CategoriesController::class, 'cratecategories']);
 Route::get('/categories', [CategoriesController::class, 'categorieslist']);
 Route::get('/updatecategorie/{id}', [CategoriesController::class, 'updatecategorie']);
 Route::post('/update/{id}', [CategoriesController::class, 'update']);
