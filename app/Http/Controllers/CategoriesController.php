@@ -19,4 +19,10 @@ class CategoriesController extends Controller
         $categories->save();
         return redirect('/categories');
     }
+    public function categorieslist()
+    {
+        $categorieslist = Categories::get();
+        // dd($categorieslist);
+        return view('/categories', ['categorieslist' => $categorieslist],);
+    }
 }
