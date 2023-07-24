@@ -26,7 +26,7 @@
                     <td style="text-align:center;" class="table_data">{{ $categorieslist->name }}
                     </td>
                     <td style="text-align:center;" class="table_data">
-                        <a href="/update/{{ $categorieslist->id }}" class="btn btn-success btn-sm mt-1"><i
+                        <a href="/updatecategorie/{{ $categorieslist->id }}" class="btn btn-success btn-sm mt-1"><i
                                 class="fa-solid fa-pen-to-square btn-btn-success"></i></a>
                         <a href="/remove/{{ $categorieslist->id }}" class="btn btn-danger btn-sm mt-1"><i
                                 class="fa-solid fa-trash "></i></a>
@@ -34,6 +34,5 @@
                 </tr>
             @endforeach
         </table>
-
     </div>
 @endsection

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 class CategoriesController extends Controller
 {
@@ -21,14 +20,26 @@ class CategoriesController extends Controller
     }
     public function categorieslist()
     {
-        $categorieslist = Categories::get();
-        return view('/categories', ['categorieslist' => $categorieslist],);
+        $categorieslist = Categories::all();
+        return view('/categories', compact('categorieslist'));
+    }
+    public function updatecategorie($id)
+    {
+        $updatecategorie = Categories::where('id', $id)->get();
+        return view('/updatecategorie', compact('updatecategorie'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $update = Categories::where('id', $request->id)->first();
+        $update->name = $request['name'];
+        $update->save();
+        return redirect('/categories');
     }
     public function remove($id)
     {
         $categories = Categories::find($id);
         $categories->delete();
-        session()->flash('message1', 'Deleted');
         return redirect('/categories');
     }
 }
