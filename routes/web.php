@@ -28,3 +28,4 @@ Route::get('/remove/{id}', [CategoriesController::class, 'remove']);
 
 
 Route::view('/post', [PostController::class, 'post']);
+Route::post('/createpost', [PostController::class, 'createpost']);

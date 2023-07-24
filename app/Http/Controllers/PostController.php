@@ -13,6 +13,7 @@ class PostController extends Controller
     }
     public function createpost(Request $request)
     {
+        dd($request);
         $posts = new Post();
         $posts->title = $request['title'];
         $posts->content = $request['content'];
