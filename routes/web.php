@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,6 @@ Route::get('/categories', [CategoriesController::class, 'categorieslist']);
 Route::get('/updatecategorie/{id}', [CategoriesController::class, 'updatecategorie']);
 Route::post('/update/{id}', [CategoriesController::class, 'update']);
 Route::get('/remove/{id}', [CategoriesController::class, 'remove']);
+
+
+Route::view('/post', [PostController::class, 'post']);
